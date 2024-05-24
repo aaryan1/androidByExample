@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidByExamples</string>
+    <string name="looper">Looper</string>
+    <string name="flow_example">flow example</string>
+</resources>
