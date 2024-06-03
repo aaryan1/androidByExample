@@ -60,7 +60,7 @@ private fun simpleFlowExample(){
     }
 
 }
-private fun flowOfExample() {
+private fun flowOfExample () {
 
     CoroutineScope(Dispatchers.Main).launch {
 
