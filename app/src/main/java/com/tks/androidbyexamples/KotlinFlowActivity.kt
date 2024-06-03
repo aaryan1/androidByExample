@@ -13,7 +13,9 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class KotlinFlowActivity:AppCompatActivity() {
 
@@ -30,7 +32,13 @@ class KotlinFlowActivity:AppCompatActivity() {
         //flowOfExample()
         //asFlowExample()
         //channelFlowExample()
-        simulateDownloadFileUsingFlow()
+        //simulateDownloadFileUsingFlow()
+
+
+        CoroutineScope(Dispatchers.Main).launch {
+            zipOperator()
+        }
+
     }
 }
 
@@ -115,5 +123,27 @@ private fun simulateDownloadFileUsingFlow() {
             Log.d("Takendra->","File progress $it")
         }
     }
+
+
+}
+
+private suspend fun zipOperator(){
+
+    /** combines the emissions of two flow collections
+     * together via a specified function and emits single
+     * items for each combination based on the results of
+     * this function.*/
+
+
+    val flowOne = flowOf(1, 2, 3)
+    val flowTwo = flowOf("A", "B", "C")
+
+    flowOne.zip(flowTwo) { intValue, stringValue ->
+        "$intValue$stringValue"
+    }.collect {
+       // println(it)
+        Log.d("Takendra",it)
+    }
+
 
 }
