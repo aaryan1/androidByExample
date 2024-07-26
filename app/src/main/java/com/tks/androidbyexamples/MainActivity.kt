@@ -5,13 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.*
-import android.util.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
     private lateinit var intent: Intent
@@ -48,7 +41,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     private  fun callLooperActivity(){
-         intent=Intent(applicationContext,Mlooperhandler::class.java)
+         intent=Intent(applicationContext,LooperHandlerActivity::class.java)
         startActivity(intent)
     }
 
