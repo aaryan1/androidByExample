@@ -7,7 +7,7 @@ import android.os.Message
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-class Mlooperhandler:AppCompatActivity() {
+class LooperHandlerActivity:AppCompatActivity() {
 
     private lateinit var handlerThread: HandlerThread
     private lateinit var handler: Handler
@@ -49,5 +49,6 @@ class Mlooperhandler:AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         handlerThread.quitSafely()
+        //quites the looper
     }
 }
