@@ -140,7 +140,7 @@ private suspend fun zipOperator(){
     flowOne.zip(flowTwo) { intValue, stringValue ->
         "$intValue$stringValue"
     }.collect {
-       // println(it)
+        println(it)
         Log.d("Takendra",it)
     }
 
